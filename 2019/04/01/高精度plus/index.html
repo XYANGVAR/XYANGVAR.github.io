@@ -97,13 +97,14 @@
 
 
   <meta name="description" content="高精度大数的加法 众所周知，c++中最大整型的long long 一般表示8位，如果计算的数字超过这个范围的话会产生溢出的情况，这时需要用字符串人工来表述一个整数加法过程，所谓的高精度加法。 首先我们定义两个string类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接着定义一个答案串长度为len，为了方便计算，我们先将字符串反转接着将第一个数存入答案串中，定义进位为">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高精度plus">
 <meta property="og:url" content="http://xcshell.com/2019/04/01/高精度plus/index.html">
 <meta property="og:site_name" content="百里惜春的主页">
 <meta property="og:description" content="高精度大数的加法 众所周知，c++中最大整型的long long 一般表示8位，如果计算的数字超过这个范围的话会产生溢出的情况，这时需要用字符串人工来表述一个整数加法过程，所谓的高精度加法。 首先我们定义两个string类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接着定义一个答案串长度为len，为了方便计算，我们先将字符串反转接着将第一个数存入答案串中，定义进位为">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T13:26:45.256Z">
+<meta property="og:updated_time" content="2019-04-05T14:43:00.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高精度plus">
 <meta name="twitter:description" content="高精度大数的加法 众所周知，c++中最大整型的long long 一般表示8位，如果计算的数字超过这个范围的话会产生溢出的情况，这时需要用字符串人工来表述一个整数加法过程，所谓的高精度加法。 首先我们定义两个string类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接着定义一个答案串长度为len，为了方便计算，我们先将字符串反转接着将第一个数存入答案串中，定义进位为">
@@ -360,12 +361,24 @@
                 
               
 
-              <time title="创建时间：2019-04-01 21:23:57 / 修改时间：21:26:45" itemprop="dateCreated datePublished" datetime="2019-04-01T21:23:57+08:00">2019-04-01</time>
+              <time title="创建时间：2019-04-01 21:23:57" itemprop="dateCreated datePublished" datetime="2019-04-01T21:23:57+08:00">2019-04-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-05 22:43:00" itemprop="dateModified" datetime="2019-04-05T22:43:00+08:00">2019-04-05</time>
               
             
           </span>
@@ -404,7 +417,7 @@
 <li>首先我们定义两个<code>string</code>类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接着定义一个答案串长度为<code>len</code>，为了方便计算，我们先将字符串反转接着将第一个数存入答案串中，定义进位为<code>tmp</code>，然后用循环将另一个加数逐位加到答案串中，并计算进位情况。</li>
 </ul>
 <p>代码如下。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> a,<span class="built_in">string</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a=a.substr(a.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">	b=b.substr(b.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> lenA=a.length();</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> lenB=b.length();</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> len=max(lenA,lenB)+<span class="number">10</span>;</span><br><span class="line">	reverse(a.begin(),a.end());</span><br><span class="line">	reverse(b.begin(),b.end());</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">ans</span><span class="params">(len,<span class="string">'0'</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenA;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans[i]=a[i];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;b.length())</span><br><span class="line">		tmp+=(ans[i]-<span class="string">'0'</span>)+(b[i]-<span class="string">'0'</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		tmp+=(ans[i]-<span class="string">'0'</span>);</span><br><span class="line">		ans[i]=tmp%<span class="number">10</span>+<span class="string">'0'</span>;</span><br><span class="line">		tmp/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	reverse(ans.begin(),ans.end());</span><br><span class="line">    <span class="keyword">return</span> ans.substr(ans.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> a=<span class="string">"121323131213212131"</span>;</span><br><span class="line">	<span class="built_in">string</span> b=<span class="string">"435435435436566474324"</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;add(a,b)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> a,<span class="built_in">string</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a=a.substr(a.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">	b=b.substr(b.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> lenA=a.length();</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> lenB=b.length();</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> len=max(lenA,lenB)+<span class="number">10</span>;</span><br><span class="line">	reverse(a.begin(),a.end());</span><br><span class="line">	reverse(b.begin(),b.end());</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">ans</span><span class="params">(len,<span class="string">'0'</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenA;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans[i]=a[i];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;b.length())</span><br><span class="line">		tmp+=(ans[i]-<span class="string">'0'</span>)+(b[i]-<span class="string">'0'</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		tmp+=(ans[i]-<span class="string">'0'</span>);</span><br><span class="line">		ans[i]=tmp%<span class="number">10</span>+<span class="string">'0'</span>;</span><br><span class="line">		tmp/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	reverse(ans.begin(),ans.end());</span><br><span class="line">    <span class="keyword">return</span> ans.substr(ans.find_first_not_of(<span class="string">'0'</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> a=<span class="string">"121323131213212131"</span>;</span><br><span class="line">	<span class="built_in">string</span> b=<span class="string">"435435435436566474324"</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;add(a,b)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -426,6 +439,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+        </div>
+      
 
       
       
@@ -444,6 +463,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/05/数字转字符串itos/" rel="prev" title="数字转字符串itos">
+                数字转字符串itos <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -512,7 +535,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -520,6 +543,21 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           

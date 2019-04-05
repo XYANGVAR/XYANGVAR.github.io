@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="百里惜春的主页">
-<meta property="og:url" content="http://xcshell.com/index.html">
+  <meta name="description" content="把一个数字转为字符串s 在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数i2s，主要利用c++的输入流。  代码：12345678910111213141516171819#include&amp;lt;iostream&amp;gt;#include&amp;lt;sstream&amp;gt;#include&amp;lt;cstring&amp;gt;using namespace std;void">
+<meta name="keywords" content="技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字转字符串itos">
+<meta property="og:url" content="http://xcshell.com/2019/04/05/数字转字符串itos/index.html">
 <meta property="og:site_name" content="百里惜春的主页">
+<meta property="og:description" content="把一个数字转为字符串s 在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数i2s，主要利用c++的输入流。  代码：12345678910111213141516171819#include&amp;lt;iostream&amp;gt;#include&amp;lt;sstream&amp;gt;#include&amp;lt;cstring&amp;gt;using namespace std;void">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-05T15:48:35.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="百里惜春的主页">
+<meta name="twitter:title" content="数字转字符串itos">
+<meta name="twitter:description" content="把一个数字转为字符串s 在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数i2s，主要利用c++的输入流。  代码：12345678910111213141516171819#include&amp;lt;iostream&amp;gt;#include&amp;lt;sstream&amp;gt;#include&amp;lt;cstring&amp;gt;using namespace std;void">
 
 
 
 
 
 
-  <link rel="canonical" href="http://xcshell.com/">
+  <link rel="canonical" href="http://xcshell.com/2019/04/05/数字转字符串itos/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>百里惜春的主页</title>
+  <title>数字转字符串itos | 百里惜春的主页</title>
   
 
 
@@ -167,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -297,9 +301,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -331,10 +335,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/05/数字转字符串itos/" class="post-title-link" itemprop="url">数字转字符串itos</a>
+          <h1 class="post-title" itemprop="name headline">数字转字符串itos
+
               
             
           </h1>
@@ -398,25 +400,11 @@
       
 
       
-        
-          
-            <p>
-              把一个数字转为字符串s
-在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数i2s，主要利用c++的输入流。
+        <h2 id="把一个数字转为字符串s"><a href="#把一个数字转为字符串s" class="headerlink" title="把一个数字转为字符串s"></a>把一个数字转为字符串s</h2><ul>
+<li>在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数<code>i2s</code>，主要利用<code>c++</code>的输入流。</li>
+</ul>
+<p>代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i2s</span><span class="params">(<span class="keyword">int</span> num,<span class="built_in">string</span> &amp;str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">stringstream</span> ss;</span><br><span class="line">	ss&lt;&lt;num;</span><br><span class="line">	ss&gt;&gt;str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;i;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	i2s(i,s);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-代码：#include&lt;iostream&gt;#include&lt;sstream&gt;#include&lt;cstring&gt;usin
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/05/数字转字符串itos/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
       
     </div>
 
@@ -437,348 +425,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xcshell.com/2019/04/01/高精度plus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里惜春的主页">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/01/高精度plus/" class="post-title-link" itemprop="url">高精度plus</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-01 21:23:57" itemprop="dateCreated datePublished" datetime="2019-04-01T21:23:57+08:00">2019-04-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-05 22:43:00" itemprop="dateModified" datetime="2019-04-05T22:43:00+08:00">2019-04-05</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/技巧/" rel="tag"># 技巧</a>
           
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-            <p>
-              高精度大数的加法
-众所周知，c++中最大整型的long long 一般表示8位，如果计算的数字超过这个范围的话会产生溢出的情况，这时需要用字符串人工来表述一个整数加法过程，所谓的高精度加法。
-首先我们定义两个string类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/01/高精度plus/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/01/高精度plus/" rel="next" title="高精度plus">
+                <i class="fa fa-chevron-left"></i> 高精度plus
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xcshell.com/2019/03/22/如何利用一条简单语句判断一个整数是否为2的整数次幂/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里惜春的主页">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/22/如何利用一条简单语句判断一个整数是否为2的整数次幂/" class="post-title-link" itemprop="url">如何利用一条简单语句判断一个整数是否为2的整数次幂</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-22 20:05:55" itemprop="dateCreated datePublished" datetime="2019-03-22T20:05:55+08:00">2019-03-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-05 22:43:05" itemprop="dateModified" datetime="2019-04-05T22:43:05+08:00">2019-04-05</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>
-              在写代码的过程中可能会遇到判断一个整数是否为2的整数次幂的问题，除了枚举的方法，还可以利用二进制的知识进行简单快速判断。
-2的整数次幂用二进制表示只存在一个1和n个0，因此，我们利用位运算&amp;判断一个整数a与a-1的&amp;是否为0即可。具体代码如下。
-代码非常简洁。#include&lt;
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/22/如何利用一条简单语句判断一个整数是否为2的整数次幂/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -788,14 +464,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -815,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -877,6 +563,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把一个数字转为字符串s"><span class="nav-number">1.</span> <span class="nav-text">把一个数字转为字符串s</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1003,6 +706,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -1018,6 +725,8 @@
 
   
 
+
+  
 
 
   
