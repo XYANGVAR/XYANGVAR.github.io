@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二进制奇偶位快速转换]]></title>
+    <url>%2F2019%2F04%2F06%2F%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%A5%87%E5%81%B6%E4%BD%8D%E5%BF%AB%E9%80%9F%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[将整数二进制的奇偶位快速互换 有的题目需要将一个整数的二进制的奇偶位做互换，这时需要用到位运算的异或算符^。具体原理如下： 9的二进制1001，互换之后为0110。为了这个互换，我们需要将1001分别与上1010和0101记做ou（偶数位保留）和ji(奇数位保留)，将ou右移一位；将ji左移一位之后两者做异或运算即可。 代码： 123456789101112131415#include&lt;bits/stdc++.h&gt;using namespace std;int m(int i)&#123;int ou=i&amp;0xaaaaaaaa;//这里0xaaaaaaaa作为1010 1010...取出偶数位共32位int ji=i&amp;0x55555555;//这里0x55555555作为0101 0101...取出奇数位共32位return (ou&gt;&gt;1)^(ji&lt;&lt;1);&#125;int main()&#123; int a=9; int b=m(a); cout&lt;&lt;b&lt;&lt;endl;&#125;]]></content>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数字转字符串itos]]></title>
     <url>%2F2019%2F04%2F05%2F%E6%95%B0%E5%AD%97%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2itos%2F</url>
     <content type="text"><![CDATA[把一个数字转为字符串s 在输入的过程中经常需要将一个数字转化为字符串方便处理这里引入一个将数字转为字符串的函数i2s，主要利用c++的输入流。 代码：12345678910111213141516171819#include&lt;iostream&gt;#include&lt;sstream&gt;#include&lt;cstring&gt;using namespace std;void i2s(int num,string &amp;str)&#123; stringstream ss; ss&lt;&lt;num; ss&gt;&gt;str;&#125;int main()&#123; int i; cin&gt;&gt;i; string s; i2s(i,s); cout&lt;&lt;s&lt;&lt;endl;&#125;]]></content>
