@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[铺地毯]]></title>
+    <url>%2F2019%2F04%2F11%2F%E9%93%BA%E5%9C%B0%E6%AF%AF%2F</url>
+    <content type="text"><![CDATA[题目描述: 为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 n 张地毯，编号从 1 到n。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。 输入输出格式输入格式：输入共n+2行 第一行，一个整数n，表示总共有n张地毯 接下来的nn行中，第 i+1行表示编号ii的地毯的信息，包含四个正整数a ,b ,g ,k，每两个整数之间用一个空格隔开，分别表示铺设地毯的左下角的坐标(a,b)以及地毯在x轴和y轴方向的长度 第n+2行包含两个正整数x和y，表示所求的地面的点的坐标(x,y)输出格式：输出共1行，一个整数，表示所求的地毯的编号；若此处没有被地毯覆盖则输出-1 解答：简单进行一下模拟，不断更新最上面的地毯。12345678910111213141516171819202122232425262728#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;struct sq&#123; ll a; ll b; ll g; ll k;&#125;sq[10001];int main()&#123; ll n,x,y; cin&gt;&gt;n; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;sq[i].a&gt;&gt;sq[i].b&gt;&gt;sq[i].g&gt;&gt;sq[i].k; &#125; cin&gt;&gt;x&gt;&gt;y; int ans=-1; for(int i=0;i&lt;n;i++) &#123; if((x&gt;=sq[i].a)&amp;&amp;(x&lt;=(sq[i].a+sq[i].g))&amp;&amp;(y&gt;=sq[i].b)&amp;&amp;(y&lt;=sq[i].b+sq[i].k)) ans=i+1; &#125; cout&lt;&lt;ans&lt;&lt;endl; return 0;&#125;]]></content>
+      <tags>
+        <tag>水题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二进制奇偶位快速转换]]></title>
     <url>%2F2019%2F04%2F06%2F%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%A5%87%E5%81%B6%E4%BD%8D%E5%BF%AB%E9%80%9F%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[将整数二进制的奇偶位快速互换 有的题目需要将一个整数的二进制的奇偶位做互换，这时需要用到位运算的异或算符^。具体原理如下： 9的二进制1001，互换之后为0110。为了这个互换，我们需要将1001分别与上1010和0101记做ou（偶数位保留）和ji(奇数位保留)，将ou右移一位；将ji左移一位之后两者做异或运算即可。 代码： 123456789101112131415#include&lt;bits/stdc++.h&gt;using namespace std;int m(int i)&#123;int ou=i&amp;0xaaaaaaaa;//这里0xaaaaaaaa作为1010 1010...取出偶数位共32位int ji=i&amp;0x55555555;//这里0x55555555作为0101 0101...取出奇数位共32位return (ou&gt;&gt;1)^(ji&lt;&lt;1);&#125;int main()&#123; int a=9; int b=m(a); cout&lt;&lt;b&lt;&lt;endl;&#125;]]></content>
