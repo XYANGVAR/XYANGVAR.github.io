@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[散列表的例子]]></title>
+    <url>%2F2019%2F04%2F29%2F%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E4%BE%8B%E5%AD%90%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[无范围性枚举例子]]></title>
     <url>%2F2019%2F04%2F24%2F%E6%97%A0%E8%8C%83%E5%9B%B4%E6%80%A7%E6%9E%9A%E4%B8%BE%E4%BE%8B%E5%AD%90%2F</url>
     <content type="text"><![CDATA[p10011车站 题目描述: &nbsp;&nbsp;火车从始发站（称为第1站）开出，在始发站上车的人数为a，然后到达第2站，在第2站有人上、下车，但上、下车的人数相同，因此在第2站开出时（即在到达第3站之前）车上的人数保持为a人。从第3站起（包括第3站）上、下车的人数有一定规律：上车的人数都是前两站上车人数之和，而下车人数等于上一站上车人数，一直到终点站的前一站（第n−1站），都满足此规律。现给出的条件是：共有N个车站，始发站上车的人数为a，最后一站下车的人数是m（全部下车）。试问x站开出时车上的人数是多少？ 输入输出格式输入格式：a(≤20)，n(≤20)，m(≤2000)，和x(≤20)， 输出格式：从x站开出时车上的人数。 输入样例： &nbsp;&nbsp;&nbsp;输入：5 7 32 4 &nbsp;&nbsp;&nbsp;输出：13 思路： &nbsp;&nbsp;这应该是一道类似斐波那契数列的数学问题，不同的是初始条件并没有给出，需要我们自己枚举判断是否初始条件符合要求，所以枚举的方法就应该是从0开始不断枚举先假设条件成立再反过来推此时的初始条件是否符合要求。代码如下：12345678910111213141516171819202122232425262728293031323334#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;int main()&#123; ll up[30],down[30]; ll ans[30]; int a,n,m,x; cin&gt;&gt;a&gt;&gt;n&gt;&gt;m&gt;&gt;x; up[1]=a;//初始化 down[1]=0; ans[1]=a; ans[2]=a; for(int j=0;;j++)//枚举初始条件 &#123; up[2]=j; down[2]=j; for(int i=3;i&lt;n;i++) &#123; up[i]=up[i-1]+up[i-2];//模拟 down[i]=up[i-1]; ans[i]=ans[i-1]+up[i]-down[i]; &#125; ans[n]=0; if(ans[n-1]==m) &#123; cout&lt;&lt;ans[x]&lt;&lt;endl; break;//找到，退出 &#125; &#125; return 0;&#125;]]></content>
