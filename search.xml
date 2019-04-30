@@ -4,6 +4,9 @@
     <title><![CDATA[win7搭建深度学习视觉环境教程]]></title>
     <url>%2F2019%2F04%2F30%2Fwin7%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%A7%86%E8%A7%89%E7%8E%AF%E5%A2%83%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[DP之多维动态规划问题]]></title>
@@ -25,16 +28,25 @@
     <title><![CDATA[最小生成树之Kruskal]]></title>
     <url>%2F2019%2F04%2F30%2F%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E4%B9%8BKruskal%2F</url>
     <content type="text"></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[深入理解dfs/bfs之寻路问题]]></title>
     <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3dfs-bfs%E4%B9%8B%E5%AF%BB%E8%B7%AF%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[深入理解辗转相除法以及线性方程解法]]></title>
     <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E4%BB%A5%E5%8F%8A%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E8%A7%A3%E6%B3%95%2F</url>
     <content type="text"></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[散列表的例子]]></title>
@@ -137,7 +149,7 @@
     <url>%2F2019%2F04%2F01%2F%E9%AB%98%E7%B2%BE%E5%BA%A6plus%2F</url>
     <content type="text"><![CDATA[高精度大数的加法 众所周知，c++中最大整型的long long 一般表示8位，如果计算的数字超过这个范围的话会产生溢出的情况，这时需要用字符串人工来表述一个整数加法过程，所谓的高精度加法。 首先我们定义两个string类型的字符串作为我们输入的加数，（输入的时候可以利用itos函数将数字转为串）接着定义一个答案串长度为len，为了方便计算，我们先将字符串反转接着将第一个数存入答案串中，定义进位为tmp，然后用循环将另一个加数逐位加到答案串中，并计算进位情况。 代码如下。 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;#include&lt;sstream&gt;using namespace std;string add(string a,string b)&#123; a=a.substr(a.find_first_not_of('0')); b=b.substr(b.find_first_not_of('0')); long long lenA=a.length(); long long lenB=b.length(); long long len=max(lenA,lenB)+10; reverse(a.begin(),a.end()); reverse(b.begin(),b.end()); string ans(len,'0'); for(int i=0;i&lt;lenA;i++) &#123; ans[i]=a[i]; &#125; int tmp=0; for(int i=0;i&lt;len;i++) &#123; if(i&lt;b.length()) tmp+=(ans[i]-'0')+(b[i]-'0'); else tmp+=(ans[i]-'0'); ans[i]=tmp%10+'0'; tmp/=10; &#125; reverse(ans.begin(),ans.end()); return ans.substr(ans.find_first_not_of('0'));&#125;int main()&#123; string a="121323131213212131"; string b="435435435436566474324"; cout&lt;&lt;add(a,b)&lt;&lt;endl;&#125;]]></content>
       <tags>
-        <tag>基础</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
