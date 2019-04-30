@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[DP之多维动态规划问题]]></title>
+    <url>%2F2019%2F04%2F30%2FDP%E4%B9%8B%E5%A4%9A%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[深入理解神经网络结构MobileNets]]></title>
+    <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84MobileNets%2F</url>
+    <content type="text"><![CDATA[论文原文： https://arxiv.org/abs/1704.04861]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[最小生成树之Kruskal]]></title>
+    <url>%2F2019%2F04%2F30%2F%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E4%B9%8BKruskal%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[深入理解dfs/bfs之寻路问题]]></title>
+    <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3dfs-bfs%E4%B9%8B%E5%AF%BB%E8%B7%AF%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[深入理解辗转相除法以及线性方程解法]]></title>
     <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E4%BB%A5%E5%8F%8A%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E8%A7%A3%E6%B3%95%2F</url>
     <content type="text"></content>
