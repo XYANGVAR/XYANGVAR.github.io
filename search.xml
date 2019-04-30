@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[深入理解辗转相除法以及线性方程解法]]></title>
+    <url>%2F2019%2F04%2F30%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E4%BB%A5%E5%8F%8A%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E8%A7%A3%E6%B3%95%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[散列表的例子]]></title>
     <url>%2F2019%2F04%2F29%2F%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E4%BE%8B%E5%AD%90%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数学等式 题目描述： 输入: a,b,c,d,e 输出: 满足等式成立的数据的组数 输入样例: -14 -42 -23 27 -48 输出样例: 3022 分析： &nbsp;&nbsp;一开始拿到题目可能会向费马定理或同余方程方面考虑，其实他给出了范围只需要进行枚举x散列就可以了。 &nbsp;&nbsp;代码： 1234567891011121314151617181920212223#include&lt;bits/stdc++.h&gt;using namespace std;#define N 25000000#define sqr(X) (X*X*X)//宏定义#define rep(i,l,r) for(int i=l;i&lt;=r;++i)short s[25000001];int a,b,c,d,e,cnt=0;inline int rp(int x)&#123;//防止下标越界 if(x&lt;0) x+=N; return x;&#125;int main()&#123; for(;~scanf("%d%d%d%d%d",&amp;a,&amp;b,&amp;c,&amp;d,&amp;e);cnt=0)&#123;//输入数据 memset(s,0,sizeof s); rep(i,-50,50) if(i) rep(j,-50,50) if(j) s[rp(sqr(i)*d+sqr(j)*e)]++;//散列过程 rep(i,-50,50) if(i) rep(j,-50,50) if(j) rep(k,-50,50) if(k) cnt+=s[rp(sqr(i)*a+sqr(j)*b+sqr(k)*c)]; cout&lt;&lt;cnt&lt;&lt;endl; &#125;&#125;]]></content>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[无范围性枚举例子]]></title>
