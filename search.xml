@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[win7实现自己利用神经网络训练数据集并识别目标]]></title>
+    <url>%2F2019%2F04%2F30%2Fwin7%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E5%88%A9%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E9%9B%86%E5%B9%B6%E8%AF%86%E5%88%AB%E7%9B%AE%E6%A0%87%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[win7搭建深度学习视觉环境教程]]></title>
     <url>%2F2019%2F04%2F30%2Fwin7%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%A7%86%E8%A7%89%E7%8E%AF%E5%A2%83%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"></content>
@@ -11,7 +16,7 @@
   <entry>
     <title><![CDATA[DP之多维动态规划问题]]></title>
     <url>%2F2019%2F04%2F30%2FDP%E4%B9%8B%E5%A4%9A%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[多维动态规划问题P1006传纸条 &nbsp;&nbsp;小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排做成一个m行n列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标(1,1)，小轩坐在矩阵的右下角，坐标(m,n)。从小渊传到小轩的纸条只可以向下或者向右传递，从小轩传给小渊的纸条只可以向上或者向左传递。在活动进行中，小渊希望给小轩传递一张纸条，同时希望小轩给他回复。班里每个同学都可以帮他们传递，但只会帮他们一次，也就是说如果此人在小渊递给小轩纸条的时候帮忙，那么在小轩递给小渊的时候就不会再帮忙。反之亦然。还有一件事情需要注意，全班每个同学愿意帮忙的好感度有高有低（注意：小渊和小轩的好心程度没有定义，输入时用0表示），可以用一个0-100的自然数来表示，数越大表示越好心。小渊和小轩希望尽可能找好心程度高的同学来帮忙传纸条，即找到来回两条传递路径，使得这两条路径上同学的好心程度只和最大。现在，请你帮助小渊和小轩找到这样的两条路径。 输入格式： &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入文件的第一行有2个用空格隔开的整数m和n表示班里有m行n列（1≤m,n≤50）。接下来的m行是一个m∗n的矩阵，矩阵中第i行j列的整数表示坐在第i行j列的学生的好心程度。每行的 n 个整数之间用空格隔开。 输出格式： &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输出文件共一行，包含一个整数，表示来回两条路上参与传递纸条的学生的好心程度之和的最大值。 思路： &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于题目的数据范围只有50，所以我们可以用迭代的dp来做，首先看到题目要求找到一个地图里从(1,1)到(m,n)权值最大且互相不重叠的两条路径且只能向右或下走，四重循环中我们设每一步的状态为ans[i][j][k][l]；ans[i][j]和ans[k][l]分别表示两条路径的状态，那么状态转移方程就为ans[i][j][k][l]=max(ans[i-1][j][k-1][l],max(ans[i-1][j][k][l-1],max(ans[i][j-1][k][l-1],ans[i][j-1][k-1][l])))+a[i][j]+a[k][l] 代码： 12345678910111213141516171819202122232425262728293031 #include&lt;bits/stdc++.h&gt;using namespace std; int a[60][60]; int ans[60][60][60][60];int main()&#123; int m,n; cin&gt;&gt;m&gt;&gt;n; for(int i=1;i&lt;=m;i++) for(int j=1;j&lt;=n;j++) &#123; cin&gt;&gt;a[i][j];//输入数据 &#125; memset(ans,-1,sizeof(ans));//初始化 ans[1][1][1][1]=0; for(int i=1;i&lt;=m;i++) &#123; for(int j=1;j&lt;=n-1;j++)//到`n-1`列 &#123; for(int k=1;k&lt;=m-1;k++)//到`m-1`行 &#123; for(int l=j+1;l&lt;=n;l++)到`n`列 &#123; if(i!=k)//保证不会重叠 ans[i][j][k][l]=max(ans[i-1][j][k-1][l],max(ans[i-1][j][k][l-1],max(ans[i][j-1][k-1][l],ans[i][j-1][k][l-1])))+a[i][j]+a[k][l]; &#125; &#125; &#125; &#125; cout&lt;&lt;ans[m][n-1][m-1][n]&lt;&lt;endl; return 0;&#125;]]></content>
       <tags>
         <tag>动态规划</tag>
       </tags>

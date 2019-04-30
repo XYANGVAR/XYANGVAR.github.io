@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Valar morghulis,Valar Dohaeris">
+  <meta name="description" content="多维动态规划问题P1006传纸条  &amp;nbsp;&amp;nbsp;小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排做成一个m行n列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标(1,1)，小轩坐在矩阵的右下角，坐标(m,n)。从小渊传到">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DP之多维动态规划问题">
 <meta property="og:url" content="http://xcshell.com/2019/04/30/DP之多维动态规划问题/index.html">
 <meta property="og:site_name" content="Deepscene&#39;s blog">
-<meta property="og:description" content="Valar morghulis,Valar Dohaeris">
+<meta property="og:description" content="多维动态规划问题P1006传纸条  &amp;nbsp;&amp;nbsp;小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排做成一个m行n列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标(1,1)，小轩坐在矩阵的右下角，坐标(m,n)。从小渊传到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-30T05:19:09.160Z">
+<meta property="og:updated_time" content="2019-04-30T08:47:06.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DP之多维动态规划问题">
-<meta name="twitter:description" content="Valar morghulis,Valar Dohaeris">
+<meta name="twitter:description" content="多维动态规划问题P1006传纸条  &amp;nbsp;&amp;nbsp;小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排做成一个m行n列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标(1,1)，小轩坐在矩阵的右下角，坐标(m,n)。从小渊传到">
 
 
 
@@ -365,7 +365,7 @@
                 
               
 
-              <time title="创建时间：2019-04-30 13:09:31 / 修改时间：13:19:09" itemprop="dateCreated datePublished" datetime="2019-04-30T13:09:31+08:00">2019-04-30</time>
+              <time title="创建时间：2019-04-30 13:09:31 / 修改时间：16:47:06" itemprop="dateCreated datePublished" datetime="2019-04-30T13:09:31+08:00">2019-04-30</time>
             
 
             
@@ -404,7 +404,26 @@
       
 
       
-        
+        <h2 id="多维动态规划问题"><a href="#多维动态规划问题" class="headerlink" title="多维动态规划问题"></a>多维动态规划问题</h2><p>P1006传纸条</p>
+<ul>
+<li>&nbsp;&nbsp;小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排做成一个m行n列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标(1,1)，小轩坐在矩阵的右下角，坐标(m,n)。从小渊传到小轩的纸条只可以向下或者向右传递，从小轩传给小渊的纸条只可以向上或者向左传递。<br>在活动进行中，小渊希望给小轩传递一张纸条，同时希望小轩给他回复。班里每个同学都可以帮他们传递，但只会帮他们一次，也就是说如果此人在小渊递给小轩纸条的时候帮忙，那么在小轩递给小渊的时候就不会再帮忙。反之亦然。<br>还有一件事情需要注意，全班每个同学愿意帮忙的好感度有高有低（注意：小渊和小轩的好心程度没有定义，输入时用0表示），可以用一个0-100的自然数来表示，数越大表示越好心。小渊和小轩希望尽可能找好心程度高的同学来帮忙传纸条，即找到来回两条传递路径，使得这两条路径上同学的好心程度只和最大。现在，请你帮助小渊和小轩找到这样的两条路径。</li>
+<li>输入格式：</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入文件的第一行有2个用空格隔开的整数m和n表示班里有m行n列（1≤m,n≤50）。<br>接下来的m行是一个m∗n的矩阵，矩阵中第i行j列的整数表示坐在第i行j列的学生的好心程度。每行的 n 个整数之间用空格隔开。</p>
+<ul>
+<li>输出格式：</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输出文件共一行，包含一个整数，表示来回两条路上参与传递纸条的学生的好心程度之和的最大值。</p>
+<ul>
+<li>思路：</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于题目的数据范围只有50，所以我们可以用迭代的dp来做，首先看到题目要求找到一个地图里从(1,1)到(m,n)权值最大且互相不重叠的两条路径且只能向右或下走，四重循环中我们设每一步的状态为<code>ans[i][j][k][l]</code>；<code>ans[i][j]</code>和<code>ans[k][l]</code>分别表示两条路径的状态，那么状态转移方程就为<code>ans[i][j][k][l]=max(ans[i-1][j][k-1][l],max(ans[i-1][j][k][l-1],max(ans[i][j-1][k][l-1],ans[i][j-1][k-1][l])))+a[i][j]+a[k][l]</code></p>
+<ul>
+<li><p>代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> <span class="keyword">int</span> a[<span class="number">60</span>][<span class="number">60</span>];</span><br><span class="line">    <span class="keyword">int</span> ans[<span class="number">60</span>][<span class="number">60</span>][<span class="number">60</span>][<span class="number">60</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i][j];<span class="comment">//输入数据</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(ans,<span class="number">-1</span>,<span class="keyword">sizeof</span>(ans));<span class="comment">//初始化</span></span><br><span class="line">	 ans[<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	 <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n<span class="number">-1</span>;j++)<span class="comment">//到`n-1`列</span></span><br><span class="line">	 	&#123;</span><br><span class="line">	 		<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=m<span class="number">-1</span>;k++)<span class="comment">//到`m-1`行</span></span><br><span class="line">	 		&#123;</span><br><span class="line">	 			<span class="keyword">for</span>(<span class="keyword">int</span> l=j+<span class="number">1</span>;l&lt;=n;l++)到`n`列</span><br><span class="line">	 			&#123;   <span class="keyword">if</span>(i!=k)<span class="comment">//保证不会重叠</span></span><br><span class="line">	 				ans[i][j][k][l]=max(ans[i<span class="number">-1</span>][j][k<span class="number">-1</span>][l],max(ans[i<span class="number">-1</span>][j][k][l<span class="number">-1</span>],max(ans[i][j<span class="number">-1</span>][k<span class="number">-1</span>][l],ans[i][j<span class="number">-1</span>][k][l<span class="number">-1</span>])))+a[i][j]+a[k][l];</span><br><span class="line">	 			&#125;</span><br><span class="line">	 		&#125;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="built_in">cout</span>&lt;&lt;ans[m][n<span class="number">-1</span>][m<span class="number">-1</span>][n]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
 
@@ -496,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -512,7 +540,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -574,6 +602,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多维动态规划问题"><span class="nav-number">1.</span> <span class="nav-text">多维动态规划问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
