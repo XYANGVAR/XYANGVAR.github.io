@@ -96,17 +96,20 @@
 
 
 
-  <meta name="description" content="Valar morghulis,Valar Dohaeris">
+  <meta name="description" content="p1090合并果子 问题描述：  在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。 每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 n-1 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。 因为还要花大力气把这些果子搬回家，所以多多在合并果子时要">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="priority_queue之合并果子">
 <meta property="og:url" content="http://xcshell.com/2019/05/05/priority-queue之合并果子/index.html">
 <meta property="og:site_name" content="Deepscene&#39;s blog">
-<meta property="og:description" content="Valar morghulis,Valar Dohaeris">
+<meta property="og:description" content="p1090合并果子 问题描述：  在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。 每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 n-1 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。 因为还要花大力气把这些果子搬回家，所以多多在合并果子时要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T05:13:45.325Z">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/priority-queue之合并果子/dd.png">
+<meta property="og:updated_time" content="2019-05-05T06:41:08.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="priority_queue之合并果子">
-<meta name="twitter:description" content="Valar morghulis,Valar Dohaeris">
+<meta name="twitter:description" content="p1090合并果子 问题描述：  在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。 每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 n-1 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。 因为还要花大力气把这些果子搬回家，所以多多在合并果子时要">
+<meta name="twitter:image" content="http://xcshell.com/2019/05/05/priority-queue之合并果子/dd.png">
 
 
 
@@ -364,9 +367,13 @@
                 
               
 
-              <time title="创建时间：2019-05-05 13:13:45" itemprop="dateCreated datePublished" datetime="2019-05-05T13:13:45+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 13:13:45 / 修改时间：14:41:08" itemprop="dateCreated datePublished" datetime="2019-05-05T13:13:45+08:00">2019-05-05</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -399,7 +406,33 @@
       
 
       
-        
+        <h2 id="p1090合并果子"><a href="#p1090合并果子" class="headerlink" title="p1090合并果子"></a>p1090合并果子</h2><ul>
+<li>问题描述：</li>
+</ul>
+<p>在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。</p>
+<p>每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 n-1 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。</p>
+<p>因为还要花大力气把这些果子搬回家，所以多多在合并果子时要尽可能地节省体力。假定每个果子重量都为 1 ，并且已知果子的种类 数和每种果子的数目，你的任务是设计出合并的次序方案，使多多耗费的体力最少，并输出这个最小的体力耗费值。</p>
+<p>例如有 3 种果子，数目依次为 1 ， 2 ， 9 。可以先将 1 、 2堆合并，新堆数目为 33 ，耗费体力为 33 。接着，将新堆与原先的第三堆合并，又得到新的堆，数目为 12 ，耗费体力为 12 。所以多多总共耗费体力 =3+12=15 。可以证明 15 为最小的体力耗费值。</p>
+<ul>
+<li>输入格式：<br>共两行。<br>第一行是一个整数 n(1≤n≤10000) ，表示果子的种类数。</li>
+</ul>
+<p>第二行包含 n 个整数，用空格分隔，第 i 个整数 (1≤ai≤20000) 是第 i 种果子的数目。</p>
+<ul>
+<li><p>输出格式：<br>一个整数，也就是最小的体力耗费值。输入数据保证这个值小于 2^31。</p>
+</li>
+<li><p>分析：</p>
+</li>
+</ul>
+<p>题意是给定n个物品要把她们合并成一个物品，合并两个物品i,j的代价是a[i]+a[j],合并以后产生一个新的重量为a[i]+a[j]的物品，求最小代价。</p>
+<p><img src="/2019/05/05/priority-queue之合并果子/dd.png" alt></p>
+<p>每次合并需要找出最小的两个物品但如果每次合并都排序一次的话就会超时，所以需要利用优先队列’priority_queue’进行优化。</p>
+<ul>
+<li>关于priority_queue几种用法归纳:</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; q; <span class="comment">//通过操作，按照元素从大到小的顺序出队</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; q; <span class="comment">//通过操作，按照元素从小到大的顺序出队</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp</span> &#123;</span> <span class="comment">//自定义优先级</span></span><br><span class="line">　　<span class="function"><span class="keyword">operator</span> <span class="title">bool</span> <span class="params">()</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span>     </span></span><br><span class="line"><span class="function">　　</span>&#123;        </span><br><span class="line">　　　　 <span class="keyword">return</span>　x &gt; y;　　 <span class="comment">// x小的优先级高       //也可以写成其他方式，如： return p[x] &gt; p[y];表示p[i]小的优先级高</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, cmp&gt; q;    <span class="comment">//定义方法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span><span class="comment">//自定义结构体优先级</span></span><br><span class="line">　　<span class="keyword">int</span> x, y;     </span><br><span class="line">　　<span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (node a, node b)     </span><br><span class="line">　　&#123;         </span><br><span class="line">　　　　<span class="keyword">return</span> a.x &gt; b.x;    <span class="comment">//结构体中，x小的优先级高     </span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;node&gt;q;   <span class="comment">//定义方法</span></span><br></pre></td></tr></table></figure>
+<p>本题代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt;q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">			q.push(a);</span><br><span class="line">	&#125;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	x=q.top();<span class="comment">//取队首元素</span></span><br><span class="line">	q.pop();</span><br><span class="line">	y=q.top();</span><br><span class="line">	q.pop();</span><br><span class="line">	ans+=(x+y);</span><br><span class="line">	q.push(x+y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -419,6 +452,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
       
 
       
@@ -481,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -559,6 +607,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#p1090合并果子"><span class="nav-number">1.</span> <span class="nav-text">p1090合并果子</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

@@ -96,17 +96,24 @@
 
 
 
-  <meta name="description" content="Valar morghulis,Valar Dohaeris">
+  <meta name="description" content="P1525关押罪犯 问题描述：  S城现有两座监狱，一共关押着N 名罪犯，编号分别为1-N。他们之间的关系自然也极不和谐。很多罪犯之间甚至积怨已久，如果客观条件具备则随时可能爆发冲突。我们用“怨气值”（一个正整数值）来表示某两名罪犯之间的仇恨程度，怨气值越大，则这两名罪犯之间的积怨越多。如果两名怨气值为c 的罪犯被关押在同一监狱，他们俩之间会发生摩擦，并造成影响力为c 的冲突事件。 每年年末，警察">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并查集之关押罪犯">
 <meta property="og:url" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/index.html">
 <meta property="og:site_name" content="Deepscene&#39;s blog">
-<meta property="og:description" content="Valar morghulis,Valar Dohaeris">
+<meta property="og:description" content="P1525关押罪犯 问题描述：  S城现有两座监狱，一共关押着N 名罪犯，编号分别为1-N。他们之间的关系自然也极不和谐。很多罪犯之间甚至积怨已久，如果客观条件具备则随时可能爆发冲突。我们用“怨气值”（一个正整数值）来表示某两名罪犯之间的仇恨程度，怨气值越大，则这两名罪犯之间的积怨越多。如果两名怨气值为c 的罪犯被关押在同一监狱，他们俩之间会发生摩擦，并造成影响力为c 的冲突事件。 每年年末，警察">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T04:32:08.315Z">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/298.png">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/b1.png">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/b2.png">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/b3.png">
+<meta property="og:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/b4.png">
+<meta property="og:updated_time" content="2019-05-05T10:06:25.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并查集之关押罪犯">
-<meta name="twitter:description" content="Valar morghulis,Valar Dohaeris">
+<meta name="twitter:description" content="P1525关押罪犯 问题描述：  S城现有两座监狱，一共关押着N 名罪犯，编号分别为1-N。他们之间的关系自然也极不和谐。很多罪犯之间甚至积怨已久，如果客观条件具备则随时可能爆发冲突。我们用“怨气值”（一个正整数值）来表示某两名罪犯之间的仇恨程度，怨气值越大，则这两名罪犯之间的积怨越多。如果两名怨气值为c 的罪犯被关押在同一监狱，他们俩之间会发生摩擦，并造成影响力为c 的冲突事件。 每年年末，警察">
+<meta name="twitter:image" content="http://xcshell.com/2019/05/05/并查集之关押罪犯/298.png">
 
 
 
@@ -364,9 +371,13 @@
                 
               
 
-              <time title="创建时间：2019-05-05 12:32:08" itemprop="dateCreated datePublished" datetime="2019-05-05T12:32:08+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 12:32:08 / 修改时间：18:06:25" itemprop="dateCreated datePublished" datetime="2019-05-05T12:32:08+08:00">2019-05-05</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -399,7 +410,143 @@
       
 
       
-        
+        <h2 id="P1525关押罪犯"><a href="#P1525关押罪犯" class="headerlink" title="P1525关押罪犯"></a>P1525关押罪犯</h2><ul>
+<li>问题描述：</li>
+</ul>
+<p>S城现有两座监狱，一共关押着N 名罪犯，编号分别为1-N。他们之间的关系自然也极不和谐。很多罪犯之间甚至积怨已久，如果客观条件具备则随时可能爆发冲突。我们用“怨气值”（一个正整数值）来表示某两名罪犯之间的仇恨程度，怨气值越大，则这两名罪犯之间的积怨越多。如果两名怨气值为c 的罪犯被关押在同一监狱，他们俩之间会发生摩擦，并造成影响力为c 的冲突事件。</p>
+<p>每年年末，警察局会将本年内监狱中的所有冲突事件按影响力从大到小排成一个列表，然后上报到S 城Z 市长那里。公务繁忙的Z 市长只会去看列表中的第一个事件的影响力，如果影响很坏，他就会考虑撤换警察局长。</p>
+<p>在详细考察了N 名罪犯间的矛盾关系后，警察局长觉得压力巨大。他准备将罪犯们在两座监狱内重新分配，以求产生的冲突事件影响力都较小，从而保住自己的乌纱帽。假设只要处于同一监狱内的某两个罪犯间有仇恨，那么他们一定会在每年的某个时候发生摩擦。那么，应如何分配罪犯，才能使Z 市长看到的那个冲突事件的影响力最小？这个最小值是多少？</p>
+<ul>
+<li>输入：</li>
+</ul>
+<p>每行中两个数之间用一个空格隔开。第一行为两个正整数N,M，分别表示罪犯的数目以及存在仇恨的罪犯对数。接下来的M行每行为三个正整数aj,bj,cj，表示aj号和bj号罪犯之间存在仇恨，其怨气值为cj。数据保证1&lt;aj≤bj≤N ,0 &lt; cj≤ 1,000,000,000，且每对罪犯组合只出现一次。</p>
+<ul>
+<li>输出：</li>
+</ul>
+<p>共1 行，为Z 市长看到的那个冲突事件的影响力。如果本年内监狱中未发生任何冲突事件，请输出0。</p>
+<p>输入输出样例说明:罪犯之间的怨气值如下面左图所示，右图所示为罪犯的分配方法，市长看到的冲突事件影响力是3512（由2 号和3 号罪犯引发）。其他任何分法都不会比这个分法更优。</p>
+<p><img src="/2019/05/05/并查集之关押罪犯/298.png" alt></p>
+<ul>
+<li>问题分析</li>
+</ul>
+<p>这道题可以用二分图来做也可以用并查集来做，并查集代码比较简单。下面介绍一下并查集：并查集是一些有N个元素的集合应用问题中，我们通常是在开始时让每个元素构成一个单元素的集合，然后按一定顺序将属于同一组的元素所在的集合合并，其间要反复查找一个元素在哪个集合中。具体的操作有两种<code>find()</code>查找父节点和<code>merge()</code>合并。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fa[ MAXN ];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">( <span class="keyword">int</span> x )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( x == fa[x] ) <span class="keyword">return</span> x;<span class="comment">//是自己，返回</span></span><br><span class="line">	<span class="keyword">return</span> fa[x] = find( fa[x] );<span class="comment">//路径压缩（nlongn）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不递归写法：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">inline int find（int x)</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">while(x!=fa[x])x=fa[x];</span></span><br><span class="line"><span class="comment">return x;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">( <span class="keyword">int</span> a , <span class="keyword">int</span> b )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fa[ find( a ) ] = find( b );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++ ) fa[i] = i;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们先分析<code>find()</code>操作。首先把5个节点自己初始化为自己的族长</p>
+<p><img src="/2019/05/05/并查集之关押罪犯/b1.png" alt></p>
+<p>然后我们就可以将需要合并的节点进行<code>merge()</code>操作，即把她们修改为相同的族长。这时遇到一个问题，假如这个树变成链式结构，那么复杂度则会很高。此时查1的代表元需要一步一步往上跳到5。</p>
+<p><img src="/2019/05/05/并查集之关押罪犯/b2.png" alt></p>
+<p>更高效的做法是利用路径压缩压缩。寻找祖先时，我们用递归查找，但是当元素很多或者树变成一条链时每次查询祖先都是O(n)的复杂度。为了避免这种情况，我们进行路径压缩，当我们递推找到祖先节点后，回溯的时候将她们的子孙节点都指向祖先，以后再次查询复杂度O(1)。总复杂度为O(logn)。</p>
+<p><img src="/2019/05/05/并查集之关押罪犯/b3.png" alt="路径压缩"></p>
+<p>所以本题思路：</p>
+<p>按照怨气值从大到小排序，开一个并查集表示犯人的集合和补集，每次把两个集合分别合并，如果有冲突直接输出，初始两个任意。</p>
+<p><img src="/2019/05/05/并查集之关押罪犯/b4.png" alt></p>
+<p>下面我们进行下模拟：</p>
+<h3 id="首先初始状态："><a href="#首先初始状态：" class="headerlink" title="首先初始状态："></a>首先初始状态：</h3><ul>
+<li><p>1</p>
+<p> 和1在同一个集合里的：1</p>
+<p> 和1不在同一个集合里的：</p>
+</li>
+<li><p>2</p>
+</li>
+</ul>
+<pre><code>和2在同一个集合里的：2
+
+和2不在同一个集合里的：
+</code></pre><ul>
+<li>3</li>
+</ul>
+<pre><code>和3在同一个集合里的：3
+
+和3不在同一个集合里的：
+</code></pre><ul>
+<li>4</li>
+</ul>
+<pre><code>和4在同一个集合里的：4
+
+和4不在同一个集合里的：
+</code></pre><ul>
+<li>5</li>
+</ul>
+<pre><code>和5在同一个集合里的：5
+
+和1不在同一个集合里的：
+</code></pre><h3 id="3和4不能在同一个集合里，所以我们把3和4分别放入补集。"><a href="#3和4不能在同一个集合里，所以我们把3和4分别放入补集。" class="headerlink" title="3和4不能在同一个集合里，所以我们把3和4分别放入补集。"></a>3和4不能在同一个集合里，所以我们把3和4分别放入补集。</h3><ul>
+<li><p>1</p>
+<p>和1在同一个集合里的：1</p>
+<p>和1不在同一个集合里的：</p>
+</li>
+<li><p>2</p>
+</li>
+</ul>
+<p>   和2在同一个集合里的：2</p>
+<p>   和2不在同一个集合里的：</p>
+<ul>
+<li>3</li>
+</ul>
+<p>   和3在同一个集合里的：3</p>
+<p>   和3不在同一个集合里的：4</p>
+<ul>
+<li>4</li>
+</ul>
+<p>   和4在同一个集合里的：4</p>
+<p>   和4不在同一个集合里的：3</p>
+<ul>
+<li>5</li>
+</ul>
+<p>   和5在同一个集合里的：5</p>
+<p>   和1不在同一个集合里的：</p>
+<h3 id="下面处理第二大的边1和3（1和3一定不在同一个监狱）"><a href="#下面处理第二大的边1和3（1和3一定不在同一个监狱）" class="headerlink" title="下面处理第二大的边1和3（1和3一定不在同一个监狱）"></a>下面处理第二大的边1和3（1和3一定不在同一个监狱）</h3><ul>
+<li><p>1</p>
+<p>和1在同一个集合里的：1，4（3和4不在同一个监狱，所以1和4一定在同一个监狱）</p>
+<p>和1不在同一个集合里的：3</p>
+</li>
+<li><p>2</p>
+</li>
+</ul>
+<p>   和2在同一个集合里的：2</p>
+<p>   和2不在同一个集合里的：</p>
+<ul>
+<li>3</li>
+</ul>
+<p>   和3在同一个集合里的：3</p>
+<p>   和3不在同一个集合里的：4，1</p>
+<ul>
+<li>4</li>
+</ul>
+<p>   和4在同一个集合里的：4，1</p>
+<p>   和4不在同一个集合里的：3</p>
+<ul>
+<li>5</li>
+</ul>
+<p>   和5在同一个集合里的：5</p>
+<p>   和1不在同一个集合里的：</p>
+<h3 id="下面处理第三大边2和3-不能关在一起"><a href="#下面处理第三大边2和3-不能关在一起" class="headerlink" title="下面处理第三大边2和3(不能关在一起)"></a>下面处理第三大边2和3(不能关在一起)</h3><ul>
+<li><p>1</p>
+<p>和1在同一个集合里的：1，4，2（3和4不在同一个监狱，所以1和4一定在同一个监狱）</p>
+<p>和1不在同一个集合里的：3</p>
+</li>
+<li><p>2</p>
+</li>
+</ul>
+<p>   和2在同一个集合里的：2，4，1（4和3不在同一集合，2和3不在同一集合，2和4在同一集合）</p>
+<p>   和2不在同一个集合里的：3</p>
+<ul>
+<li>3</li>
+</ul>
+<p>   和3在同一个集合里的：3</p>
+<p>   和3不在同一个集合里的：2，4，1</p>
+<ul>
+<li>4</li>
+</ul>
+<p>   和4在同一个集合里的：4，1，2</p>
+<p>   和4不在同一个集合里的：3</p>
+<ul>
+<li>5</li>
+</ul>
+<p>   和5在同一个集合里的：5</p>
+<p>   和1不在同一个集合里的：</p>
+<h3 id="下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。"><a href="#下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。" class="headerlink" title="下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。"></a>下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。</h3><h4 id="最后代码："><a href="#最后代码：" class="headerlink" title="最后代码："></a>最后代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll fa[<span class="number">1000000</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">lemon</span>&#123;</span><span class="comment">//罪犯结构体</span></span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">&#125;lem[<span class="number">300000</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(lemon a,lemon b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.c&lt;b.c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a==fa[a])<span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">return</span> fa[a]=find(fa[a]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">fa[find(a)]=find(b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> find(x)==find(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   <span class="keyword">int</span> n,m;</span><br><span class="line">     <span class="keyword">int</span> x,y;</span><br><span class="line">     ll w;</span><br><span class="line">     <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)fa[i]=i;<span class="comment">//2*n延展分别代表两个监狱</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;w;</span><br><span class="line">    	lem[i].a=x;</span><br><span class="line">    	lem[i].b=y;</span><br><span class="line">    	lem[i].c=w;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(lem+<span class="number">1</span>,lem+m+<span class="number">1</span>,cmp);<span class="comment">//从小到大排序</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=m;i&gt;=<span class="number">1</span>;i--)<span class="comment">//从大到小访问</span></span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">int</span> x=lem[i].a;</span><br><span class="line">    	<span class="keyword">int</span> y=lem[i].b;</span><br><span class="line">    	<span class="keyword">if</span>(check(x,y)||check(x+n,y+n))<span class="comment">//必须在同一个监狱（冲突）</span></span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="built_in">cout</span>&lt;&lt;lem[i].c;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">    	&#123;</span><br><span class="line">    		merge(x,y+n);<span class="comment">//分到两个监狱</span></span><br><span class="line">    		merge(x+n,y);</span><br><span class="line"></span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -419,6 +566,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
       
 
       
@@ -485,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,6 +725,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1525关押罪犯"><span class="nav-number">1.</span> <span class="nav-text">P1525关押罪犯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先初始状态："><span class="nav-number">1.1.</span> <span class="nav-text">首先初始状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3和4不能在同一个集合里，所以我们把3和4分别放入补集。"><span class="nav-number">1.2.</span> <span class="nav-text">3和4不能在同一个集合里，所以我们把3和4分别放入补集。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面处理第二大的边1和3（1和3一定不在同一个监狱）"><span class="nav-number">1.3.</span> <span class="nav-text">下面处理第二大的边1和3（1和3一定不在同一个监狱）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面处理第三大边2和3-不能关在一起"><span class="nav-number">1.4.</span> <span class="nav-text">下面处理第三大边2和3(不能关在一起)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。"><span class="nav-number">1.5.</span> <span class="nav-text">下面再处理第4大边1和2时发现1和2已经必须在一个监狱无法规避冲突，所以此时输出114。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最后代码："><span class="nav-number">1.5.1.</span> <span class="nav-text">最后代码：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
