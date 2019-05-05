@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[priority_queue之合并果子]]></title>
+    <url>%2F2019%2F05%2F05%2Fpriority-queue%E4%B9%8B%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[并查集之关押罪犯]]></title>
+    <url>%2F2019%2F05%2F05%2F%E5%B9%B6%E6%9F%A5%E9%9B%86%E4%B9%8B%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[bfs马的遍历]]></title>
     <url>%2F2019%2F05%2F01%2Fbfs%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[p1443马的遍历 问题描述： 有一个n*m的棋盘(1&lt;n,m&lt;=400)，在某个点上有一个马,要求你计算出马到达棋盘上任意一个点最少要走几步 输入输出格式 输入格式：一行四个数据，棋盘的大小和马的坐标 输出格式：一个n*m的矩阵，代表马到达某个点最少要走几步（左对齐，宽5格，不能到达则输出-1） 解析： 这是一道BFS模板题，BFS是用队列模拟搜索过程，先把情况都存入队列然后再分别判断每种情况是否符合；DFS是利用递归逐层深入的特点，首先就把情况锁定在跳出递归的最终条件再逐层返回。对于寻路问题，首先给出方向数组delta,这里棋盘上一次有8种走法 然后我们开一个答案数组vis，然后是一个代表一个棋子状态的结构体。定义check函数判断边界条件，最后定义我们的队列q。 代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&lt;bits/stdc++.h&gt;using namespace std;int m,n,ax,ay;int delta[2][8]=&#123;&#123;1, 1, -1, -1, 2, 2, -2, -2&#125;, &#123;2, -2, 2, -2, 1, -1, 1, -1&#125;&#125;;//八种走法int vis[1000][1000];struct linker&#123; int dx,dy,step; linker(int xx,int yy,int k):dx(xx),dy(yy),step(k)&#123;&#125;&#125;;bool check(int x,int y)&#123; if(x&gt;=1&amp;&amp;x&lt;=n&amp;&amp;y&gt;=1&amp;&amp;y&lt;=m&amp;&amp;vis[x][y]==-1) return 1; return 0;&#125;queue&lt;linker&gt;q;int main()&#123; memset(vis,-1,sizeof(vis));//初始化vis cin&gt;&gt;n&gt;&gt;m&gt;&gt;ax&gt;&gt;ay; int i,j; q.push(linker(ax,ay,0));初始化队列 vis[ax][ay]=0; while(!q.empty())//宽搜队列不为空 &#123; linker p=q.front();//取队首元素 for(i=0;i&lt;8;i++)//试探 &#123; if(check(p.dx+delta[0][i],p.dy+delta[1][i]))//可以走 &#123; q.push(linker(p.dx+delta[0][i],p.dy+delta[1][i],p.step+1));//入队 vis[p.dx+delta[0][i]][p.dy+delta[1][i]]=p.step+1;//步数+1 &#125; &#125; q.pop();//弹出 &#125; for(i=1;i&lt;=n;i++) &#123; for(j=1;j&lt;=m;j++) &#123; printf("%-5d",vis[i][j]);//左对齐输出占5位 &#125; cout&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <tags>
+        <tag>基础</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[win7实现自己利用神经网络训练数据集并识别目标]]></title>

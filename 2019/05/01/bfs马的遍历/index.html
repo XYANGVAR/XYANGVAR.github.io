@@ -96,17 +96,20 @@
 
 
 
-  <meta name="description" content="Valar morghulis,Valar Dohaeris">
+  <meta name="description" content="p1443马的遍历 问题描述：  有一个n*m的棋盘(1&amp;lt;n,m&amp;lt;=400)，在某个点上有一个马,要求你计算出马到达棋盘上任意一个点最少要走几步  输入输出格式  输入格式：一行四个数据，棋盘的大小和马的坐标 输出格式：一个n*m的矩阵，代表马到达某个点最少要走几步（左对齐，宽5格，不能到达则输出-1）  解析：  这是一道BFS模板题，BFS是用队列模拟搜索过程，先把情况都存入队列然">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bfs马的遍历">
 <meta property="og:url" content="http://xcshell.com/2019/05/01/bfs马的遍历/index.html">
 <meta property="og:site_name" content="Deepscene&#39;s blog">
-<meta property="og:description" content="Valar morghulis,Valar Dohaeris">
+<meta property="og:description" content="p1443马的遍历 问题描述：  有一个n*m的棋盘(1&amp;lt;n,m&amp;lt;=400)，在某个点上有一个马,要求你计算出马到达棋盘上任意一个点最少要走几步  输入输出格式  输入格式：一行四个数据，棋盘的大小和马的坐标 输出格式：一个n*m的矩阵，代表马到达某个点最少要走几步（左对齐，宽5格，不能到达则输出-1）  解析：  这是一道BFS模板题，BFS是用队列模拟搜索过程，先把情况都存入队列然">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T12:38:43.719Z">
+<meta property="og:image" content="http://xcshell.com/2019/05/01/bfs马的遍历/cc.png">
+<meta property="og:updated_time" content="2019-05-05T05:30:45.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bfs马的遍历">
-<meta name="twitter:description" content="Valar morghulis,Valar Dohaeris">
+<meta name="twitter:description" content="p1443马的遍历 问题描述：  有一个n*m的棋盘(1&amp;lt;n,m&amp;lt;=400)，在某个点上有一个马,要求你计算出马到达棋盘上任意一个点最少要走几步  输入输出格式  输入格式：一行四个数据，棋盘的大小和马的坐标 输出格式：一个n*m的矩阵，代表马到达某个点最少要走几步（左对齐，宽5格，不能到达则输出-1）  解析：  这是一道BFS模板题，BFS是用队列模拟搜索过程，先把情况都存入队列然">
+<meta name="twitter:image" content="http://xcshell.com/2019/05/01/bfs马的遍历/cc.png">
 
 
 
@@ -368,6 +371,22 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 13:30:45" itemprop="dateModified" datetime="2019-05-05T13:30:45+08:00">2019-05-05</time>
+              
+            
           </span>
 
           
@@ -399,7 +418,26 @@
       
 
       
-        
+        <h2 id="p1443马的遍历"><a href="#p1443马的遍历" class="headerlink" title="p1443马的遍历"></a>p1443马的遍历</h2><ul>
+<li>问题描述：</li>
+</ul>
+<p>有一个n*m的棋盘(1&lt;n,m&lt;=400)，在某个点上有一个马,要求你计算出马到达棋盘上任意一个点最少要走几步</p>
+<ul>
+<li>输入输出格式</li>
+</ul>
+<p>输入格式：<br>一行四个数据，棋盘的大小和马的坐标</p>
+<p>输出格式：<br>一个n*m的矩阵，代表马到达某个点最少要走几步（左对齐，宽5格，不能到达则输出-1）</p>
+<ul>
+<li>解析：</li>
+</ul>
+<p>这是一道BFS模板题，BFS是用队列模拟搜索过程，先把情况都存入队列然后再分别判断每种情况是否符合；DFS是利用递归逐层深入的特点，首先就把情况锁定在跳出递归的最终条件再逐层返回。<br>对于寻路问题，首先给出方向数组delta,这里棋盘上一次有8种走法</p>
+<p><img src="/2019/05/01/bfs马的遍历/cc.png" alt="棋盘"></p>
+<p>然后我们开一个答案数组vis，然后是一个代表一个棋子状态的结构体。定义check函数判断边界条件，最后定义我们的队列q。</p>
+<ul>
+<li>代码：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> m,n,ax,ay;</span><br><span class="line"><span class="keyword">int</span> delta[<span class="number">2</span>][<span class="number">8</span>]=&#123;&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">-2</span>, <span class="number">-2</span>&#125;, &#123;<span class="number">2</span>, <span class="number">-2</span>, <span class="number">2</span>, <span class="number">-2</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;&#125;;<span class="comment">//八种走法</span></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">1000</span>][<span class="number">1000</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">linker</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> dx,dy,step;</span><br><span class="line">	linker(<span class="keyword">int</span> xx,<span class="keyword">int</span> yy,<span class="keyword">int</span> k):dx(xx),dy(yy),step(k)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">1</span>&amp;&amp;x&lt;=n&amp;&amp;y&gt;=<span class="number">1</span>&amp;&amp;y&lt;=m&amp;&amp;vis[x][y]==<span class="number">-1</span>)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">queue</span>&lt;linker&gt;q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">-1</span>,<span class="keyword">sizeof</span>(vis));<span class="comment">//初始化vis</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;ax&gt;&gt;ay;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	q.push(linker(ax,ay,<span class="number">0</span>));初始化队列</span><br><span class="line">	vis[ax][ay]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())<span class="comment">//宽搜队列不为空</span></span><br><span class="line">	&#123;</span><br><span class="line">		linker p=q.front();<span class="comment">//取队首元素</span></span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)<span class="comment">//试探</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(check(p.dx+delta[<span class="number">0</span>][i],p.dy+delta[<span class="number">1</span>][i]))<span class="comment">//可以走</span></span><br><span class="line">			&#123;</span><br><span class="line">				q.push(linker(p.dx+delta[<span class="number">0</span>][i],p.dy+delta[<span class="number">1</span>][i],p.step+<span class="number">1</span>));<span class="comment">//入队</span></span><br><span class="line">				vis[p.dx+delta[<span class="number">0</span>][i]][p.dy+delta[<span class="number">1</span>][i]]=p.step+<span class="number">1</span>;<span class="comment">//步数+1</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		q.pop();<span class="comment">//弹出</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%-5d"</span>,vis[i][j]);<span class="comment">//左对齐输出占5位</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -420,6 +458,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+        </div>
+      
 
       
       
@@ -438,6 +482,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/05/并查集之关押罪犯/" rel="prev" title="并查集之关押罪犯">
+                并查集之关押罪犯 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -481,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -559,6 +616,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#p1443马的遍历"><span class="nav-number">1.</span> <span class="nav-text">p1443马的遍历</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
