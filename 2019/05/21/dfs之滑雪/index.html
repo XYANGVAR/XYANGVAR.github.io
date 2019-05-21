@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="题目描述: 为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 n 张地毯，编号从 1 到n。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。  输入输出格式输入格式">
-<meta name="keywords" content="水题">
+  <meta name="description" content="DFS里的简单寻路问题问题描述 Michael喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：  1   2   3   4   5 16  17  18  19   6 15  24  25">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="铺地毯">
-<meta property="og:url" content="http://xcshell.com/2019/04/11/铺地毯/index.html">
+<meta property="og:title" content="dfs之滑雪">
+<meta property="og:url" content="http://xcshell.com/2019/05/21/dfs之滑雪/index.html">
 <meta property="og:site_name" content="Deepscene&#39;s blog">
-<meta property="og:description" content="题目描述: 为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 n 张地毯，编号从 1 到n。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。  输入输出格式输入格式">
+<meta property="og:description" content="DFS里的简单寻路问题问题描述 Michael喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：  1   2   3   4   5 16  17  18  19   6 15  24  25">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-11T08:17:36.590Z">
+<meta property="og:image" content="http://xcshell.com/2019/05/21/dfs之滑雪/aa.png">
+<meta property="og:updated_time" content="2019-05-21T09:57:18.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="铺地毯">
-<meta name="twitter:description" content="题目描述: 为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 n 张地毯，编号从 1 到n。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。  输入输出格式输入格式">
+<meta name="twitter:title" content="dfs之滑雪">
+<meta name="twitter:description" content="DFS里的简单寻路问题问题描述 Michael喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：  1   2   3   4   5 16  17  18  19   6 15  24  25">
+<meta name="twitter:image" content="http://xcshell.com/2019/05/21/dfs之滑雪/aa.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://xcshell.com/2019/04/11/铺地毯/">
+  <link rel="canonical" href="http://xcshell.com/2019/05/21/dfs之滑雪/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>铺地毯 | Deepscene's blog</title>
+  <title>dfs之滑雪 | Deepscene's blog</title>
   
 
 
@@ -322,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xcshell.com/2019/04/11/铺地毯/">
+    <link itemprop="mainEntityOfPage" href="http://xcshell.com/2019/05/21/dfs之滑雪/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang">
@@ -339,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">铺地毯
+          <h1 class="post-title" itemprop="name headline">dfs之滑雪
 
               
             
@@ -365,7 +367,7 @@
                 
               
 
-              <time title="创建时间：2019-04-11 16:11:10 / 修改时间：16:17:36" itemprop="dateCreated datePublished" datetime="2019-04-11T16:11:10+08:00">2019-04-11</time>
+              <time title="创建时间：2019-05-21 17:15:01 / 修改时间：17:57:18" itemprop="dateCreated datePublished" datetime="2019-05-21T17:15:01+08:00">2019-05-21</time>
             
 
             
@@ -404,19 +406,27 @@
       
 
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h3><ul>
-<li><p>为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 <code>n</code> 张地毯，编号从 <code>1</code> 到<code>n</code>。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。</p>
-</li>
-<li><p>输入输出格式<br>输入格式：<br>输入共<code>n+2</code>行</p>
-</li>
-<li><p>第一行，一个整数<code>n</code>，表示总共有<code>n</code>张地毯</p>
-</li>
-<li><p>接下来的nn行中，第 <code>i+1</code>行表示编号ii的地毯的信息，包含四个正整数<code>a</code> ,<code>b</code> ,<code>g</code> ,<code>k</code>，每两个整数之间用一个空格隔开，分别表示铺设地毯的左下角的坐标<code>(a,b)</code>以及地毯在<code>x</code>轴和<code>y</code>轴方向的长度</p>
-</li>
-<li><p>第<code>n+2</code>行包含两个正整数<code>x</code>和<code>y</code>，表示所求的地面的点的坐标<code>(x,y)</code><br>输出格式：<br>输出共<code>1</code>行，一个整数，表示所求的地毯的编号；若此处没有被地毯覆盖则输出<code>-1</code></p>
-</li>
+        <h2 id="DFS里的简单寻路问题"><a href="#DFS里的简单寻路问题" class="headerlink" title="DFS里的简单寻路问题"></a>DFS里的简单寻路问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><ul>
+<li>Michael喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：</li>
 </ul>
-<p>解答：简单进行一下模拟，不断更新最上面的地毯。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sq</span>&#123;</span></span><br><span class="line">	ll a;</span><br><span class="line">	ll b;</span><br><span class="line">	ll g;</span><br><span class="line">	ll k;</span><br><span class="line"></span><br><span class="line">&#125;sq[<span class="number">10001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll n,x,y;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;sq[i].a&gt;&gt;sq[i].b&gt;&gt;sq[i].g&gt;&gt;sq[i].k;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>((x&gt;=sq[i].a)&amp;&amp;(x&lt;=(sq[i].a+sq[i].g))&amp;&amp;(y&gt;=sq[i].b)&amp;&amp;(y&lt;=sq[i].b+sq[i].k))</span><br><span class="line">		ans=i+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>1   2   3   4   5</p>
+<p>16  17  18  19   6</p>
+<p>15  24  25  20   7</p>
+<p>14  23  22  21   8</p>
+<p>13  12  11  10   9</p>
+<p>一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。在上面的例子中，一条可行的滑坡为24－17－16－1（从24开始，在1结束）。当然25－24－23－…－3－2－1更长。事实上，这是最长的一条。</p>
+<ul>
+<li>输入输出格式</li>
+</ul>
+<p>输入格式：<br>输入的第一行为表示区域的二维数组的行数R和列数C（1≤R，C≤100）。下面是R行，每行有C个数，代表高度(两个数字之间用1个空格间隔)</p>
+<p>输出格式：<br>输出区域中最长滑坡的长度。</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><ul>
+<li>如果输入的是例子中的5x5的那个矩阵，那么最长的一条就为25</li>
+</ul>
+<p><img src="/2019/05/21/dfs之滑雪/aa.png" alt></p>
+<p>所以我们需要用DFS遍历每一个点作为起点的情况，数据量只有10000，所以可以用二层循环把每一个点作为一个trigger向下搜，然后选取最长的作为答案,返回的条件为从某点当路径长度大于0；回溯的时候长度置1。</p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="keyword">int</span> ma[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="keyword">int</span> dire[<span class="number">4</span>][<span class="number">2</span>]=&#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">int</span> r,c;</span><br><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(f[x][y]&gt;<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">return</span> f[x][y];</span><br><span class="line">	<span class="keyword">int</span> nx,ny,lem;</span><br><span class="line">	<span class="keyword">bool</span> vis=<span class="literal">false</span>;</span><br><span class="line">	lem=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		nx=x+dire[i][<span class="number">0</span>];</span><br><span class="line">		ny=y+dire[i][<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(nx&lt;r&amp;&amp;ny&lt;c&amp;&amp;nx&gt;=<span class="number">0</span>&amp;&amp;ny&gt;=<span class="number">0</span>&amp;&amp;ma[x][y]&gt;ma[nx][ny])</span><br><span class="line">		&#123;</span><br><span class="line">			lem=max(dfs(nx,ny)+<span class="number">1</span>,lem);</span><br><span class="line">			vis=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!vis)</span><br><span class="line">lem=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> f[x][y]=lem; 	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r&gt;&gt;c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;c;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;ma[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;c;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ans=max(dfs(i,j),ans);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -440,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/水题/" rel="tag"># 水题</a>
+            <a href="/tags/基础/" rel="tag"># 基础</a>
           
         </div>
       
@@ -453,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/二进制奇偶位快速转换/" rel="next" title="二进制奇偶位快速转换">
-                <i class="fa fa-chevron-left"></i> 二进制奇偶位快速转换
+              <a href="/2019/05/05/priority-queue之合并果子/" rel="next" title="priority_queue之合并果子">
+                <i class="fa fa-chevron-left"></i> priority_queue之合并果子
               </a>
             
           </div>
@@ -462,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/23/2019美赛参加体会/" rel="prev" title="2019美赛参加总结">
-                2019美赛参加总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS里的简单寻路问题"><span class="nav-number">1.</span> <span class="nav-text">DFS里的简单寻路问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
